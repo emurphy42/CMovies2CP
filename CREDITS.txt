@@ -1,0 +1,7 @@
+Adapted from:
+https://github.com/AnotherPillow/2CPConverter/
+https://github.com/AnotherPillow/CM2CP/
+
+Examples used as references:
+https://www.nexusmods.com/stardewvalley/mods/4737
+https://www.nexusmods.com/stardewvalley/mods/32987
