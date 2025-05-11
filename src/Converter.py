@@ -55,19 +55,20 @@ class Converter:
             }
             self.outputContent['Changes'].append(change)
 
-        # add movie reactions
-        for reaction_set in self.inputContent['Reactions']:
-            for reaction in reaction_set['Reactions']:
-                entry = {
-                    'Reaction': reaction
-                }
-                change = {
-                    "Action": "EditData",
-                    "Target": "Data/MoviesReactions",
-                    "TargetField": [reaction_set['NPCName'], 'Reactions'],
-                    "Entries": entry
-                }
-                self.outputContent['Changes'].append(change)
+        # add movie reactions, if any
+        if 'Reactions' in self.inputContent:
+            for reaction_set in self.inputContent['Reactions']:
+                for reaction in reaction_set['Reactions']:
+                    entry = {
+                        'Reaction': reaction
+                    }
+                    change = {
+                        "Action": "EditData",
+                        "Target": "Data/MoviesReactions",
+                        "TargetField": [reaction_set['NPCName'], 'Reactions'],
+                        "Entries": entry
+                    }
+                    self.outputContent['Changes'].append(change)
 
         # finish up
         self.translateManifest()
